@@ -5,20 +5,52 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne = {
-    title:'Artilcle One | Mayank Gupta',
-    heading:'Article One',
-    date:'August 9,2017',
-    content:`
-        <p>
-            This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
-        </p>
-        <p>
-            This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
-        </p>
-        <p>
-            This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
-        </p>`
+var Articles = {
+    ArticleOne: {
+        title:'Artilcle One | Mayank Gupta',
+        heading:'Article One',
+        date:'August 9,2017',
+        content:`
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>`
+    },
+    ArticleTwo: {
+        title:'Artilcle Two | Mayank Gupta',
+        heading:'Article Two',
+        date:'August 15,2017',
+        content:`
+            <p>
+                This is the content for my second Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>`
+
+    },
+    ArticleThree: {title:'Artilcle Three | Mayank Gupta',
+        heading:'Article Three',
+        date:'August 18,2017',
+        content:`
+            <p>
+                This is the content for my third Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>
+            <p>
+                This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle. This is the content for my first Aritcle.
+            </p>`
+}
 };
 function createTemplate(data){
     var title=data.title;
@@ -59,16 +91,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one',function (req,res){  
-    res.send(createTemplate(ArticleOne));
-});
-
-app.get('/article-two',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article2.html'));
-});
-
-app.get('/article-three',function (req,res){
-    res.sendFile(path.join(__dirname, 'ui', 'article3.html'));
+app.get('/:ArticleName',function (req,res){  
+    res.send(createTemplate(Articles[ArticleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
